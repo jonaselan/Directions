@@ -5,4 +5,11 @@ class DirectionsController < ApplicationController
     gon.initials = Place.all_initials
   end
 
+  def paths
+    @places = Place.select(:latitude, :longitude, :initials)
+  end
+
+  def best_path
+    @places = Place.select(:latitude, :longitude, :initials)
+  end
 end

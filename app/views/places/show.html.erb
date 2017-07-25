@@ -35,5 +35,14 @@
   <%= @place.neighborhood %>
 </p>
 
+<p>
+  <strong>city:</strong>
+  <%= @place.city %>
+</p>
+
+<p>
+  <strong>state:</strong>
+  <%= @place.state %>
+</p>
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>

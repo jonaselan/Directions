@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :places
 
   get 'distancias' => 'directions#distance'
-  get 'paths' => 'directions#paths'
+  get 'caminhos' => 'directions#paths'
+  get 'melhor_caminho' => 'directions#best_path'
 end
