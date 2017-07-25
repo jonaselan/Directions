@@ -1,20 +1,11 @@
 html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
-}
-#right-panel {
-  line-height: 30px;
-  padding-left: 10px;
 }
 #map {
-  height: 100%;
-  width: 50%;
+  height: 85%;
 }
 #right-panel {
   float: right;
-  width: 48%;
-  padding-left: 1%;
 }
 #output {
   font-size: 12px;
