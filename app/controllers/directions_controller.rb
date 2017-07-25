@@ -1,8 +1,8 @@
 class DirectionsController < ApplicationController
 
   def distance
-    @places = Place.pluck(:latitude, :longitude)
-    @initials = Place.pluck(:initials)
+    gon.places = Place.all_lat_lng
+    gon.initials = Place.all_initials
   end
 
 end

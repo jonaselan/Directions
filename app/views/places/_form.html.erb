@@ -1,4 +1,4 @@
-<%= form_for(place) do |f| %>
+<%= form_for place, html: {class: "form-group"} do |f| %>
   <% if place.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
@@ -13,40 +13,40 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
+    <%= f.text_field :latitude, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
+    <%= f.text_field :longitude, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :initials %>
-    <%= f.text_field :initials %>
+    <%= f.text_field :initials, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :address %>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :number %>
-    <%= f.text_field :number %>
+    <%= f.text_field :number, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :neighborhood %>
-    <%= f.text_field :neighborhood %>
+    <%= f.text_field :neighborhood, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Criar', class: 'btn btn-default' %>
   </div>
 <% end %>
