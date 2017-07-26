@@ -6,7 +6,7 @@ RSpec.describe PlacesController, type: :controller do
     latitude: 0,
     longitude: 0,
     initials: 'ss',
-    address: 'asd',
+    street: 'asd',
     number: 'asd',
     neighborhood: 'asd'
   }}

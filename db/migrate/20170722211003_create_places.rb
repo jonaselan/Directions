@@ -5,7 +5,7 @@ class CreatePlaces < ActiveRecord::Migration[5.0]
       t.float :latitude
       t.float :longitude
       t.string :initials
-      t.string :address
+      t.string :street
       t.string :number
       t.string :neighborhood
       t.string :city

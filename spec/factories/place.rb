@@ -4,7 +4,7 @@ FactoryGirl.define do
     latitude  0
     longitude 0
     initials "X"
-    address "myString"
+    street "myString"
     number "myString"
     neighborhood "myString"
 
