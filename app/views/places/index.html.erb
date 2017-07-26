@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <h1>Lugares</h1>
-  <%= link_to 'Cadastrar local', new_place_path %>
+  <h1><%= t '.title' %> </h1>
+  <%= link_to new_place_path do %>
+    <%= t('.new_place') %>
+  <% end %>
 
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Name</th>
+        <th><%= Place.human_attribute_name(:name)%></th>
         <th>Latitude</th>
         <th>Longitude</th>
         <th>Initials</th>

@@ -34,6 +34,11 @@
               </ul>
             </li>
           </ul>
+          <p class="nav-language">
+            <%= t 'application.language_text' %>:
+            <%= link_to_unless_current "Português", locale: 'pt-br' %> |
+            <%= link_to_unless_current "Inglês", locale: 'en' %>
+          </p>
         </div>
       </div>
     </nav>

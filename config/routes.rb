@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  root 'places#index'
-  resources :places
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+    root 'places#index'
+    resources :places
 
-  get 'distancias' => 'directions#distance'
-  get 'caminhos' => 'directions#paths'
-  get 'melhor_caminho' => 'directions#best_path'
+    get 'distancias' => 'directions#distance'
+    get 'caminhos' => 'directions#paths'
+    get 'melhor_caminho' => 'directions#best_path'
+  end
+
+  get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  get '', to: redirect("/#{I18n.default_locale}")
 end

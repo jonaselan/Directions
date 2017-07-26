@@ -1,0 +1,11 @@
+pt-br:
+  application:
+    language_text: 'Linguagem'
+  places:
+    index:
+      title: "Locais"
+      new_place: "Criar local"
+  activerecord:
+      attributes:
+        place:
+          name: "Nome"
