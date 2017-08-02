@@ -1,5 +1,21 @@
 html, body {
   height: 100%;
+
+  .ui-menu {
+    background-color: #675e5e;
+    color: white;
+    padding: 15px;
+    width: 39%;
+    list-style: none;
+
+    &:hover{
+      background-color: #312e2e;
+    }
+    .ui-menu-item {
+      cursor: pointer;
+    }
+  }
+  
 }
 .nav-language{
   float: right;

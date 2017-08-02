@@ -4,7 +4,7 @@
   }
 </style>
 
-<%= form_for place, html: {class: "form-group"} do |f| %>
+<%= form_for place, html: {class: "form-group form-cadaster-place"} do |f| %>
   <% if place.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
@@ -31,7 +31,7 @@
       <input type="text" id="address_text" name="address_text" class="form-control" />
     </div>
     <div class="col-md-2">
-      <input type="button" id="address_button" name="address_button" value="Mostrar" class="form-control" />
+      <input type="button" id="address_button" name="address_button" value="Mostrar" class="form-control btn btn-warning" />
     </div>
 
     <div id="map-form" class="col-md-12"> </div>
@@ -74,7 +74,7 @@
   var map;
   var marker;
 
-  function initialize() {
+  function initMap() {
     var latlng = new google.maps.LatLng(-18.8800397, -47.0587899);
     var options = {
         zoom: 11,
@@ -113,7 +113,7 @@
   }
 
   $(document).ready(function () {
-    initialize();
+    initMap();
     function loadMap(endereco) {
         geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
@@ -159,8 +159,8 @@
             })
         },
         select: function (event, ui) {
-            $("#latitude_text").val(ui.item.latitude);
-            $("#longitude_text").val(ui.item.longitude);
+            // $("#latitude_text").val(ui.item.latitude);
+            // $("#longitude_text").val(ui.item.longitude);
             var location = new google.maps.LatLng(ui.item.latitude, ui.item.longitude);
             marker.setPosition(location);
             map.setCenter(location);
@@ -169,4 +169,4 @@
     });
   });
 </script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD0dmqGpAYos-EgNU5hgV9vFHQVoM1zyRM&amp;sensor=false"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD0dmqGpAYos-EgNU5hgV9vFHQVoM1zyRM&amp"></script>
