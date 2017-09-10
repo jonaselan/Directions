@@ -1,3 +1,4 @@
+# DirectionsController: hold the logic of directions 
 class DirectionsController < ApplicationController
 
   def distance

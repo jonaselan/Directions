@@ -30,10 +30,14 @@
               <ul class="dropdown-menu">
                 <li><a href="/distancias">Distâncias</a></li>
                 <li><a href="/caminhos">Caminhos</a></li>
-                <li><a href="/melhor_caminho">Melhor caminho</a></li>
+                <!-- <li><a href="/melhor_caminho">Melhor caminho</a></li> -->
               </ul>
             </li>
           </ul>
+
+          <%= link_to t('application.signup'), new_user_path %> or
+          <%= link_to t('application.loginin'), new_session_path %>
+
           <p class="nav-language">
             <%= t 'application.language_text' %>:
             <%= link_to_unless_current "Português", locale: 'pt-br' %> |
@@ -42,6 +46,10 @@
         </div>
       </div>
     </nav>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+    <% end %>
 
     <%= yield %>
   </body>

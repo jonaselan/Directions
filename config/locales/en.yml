@@ -1,6 +1,8 @@
 en:
   application:
     language_text: 'Language'
+    signup: 'Sign Up'
+    loginin: 'Log In'
   places:
     index:
       title: "Places"

@@ -1,6 +1,8 @@
 pt-br:
   application:
     language_text: 'Linguagem'
+    signup: 'Criar conta'
+    loginin: 'Logar'
   places:
     index:
       title: "Locais"
