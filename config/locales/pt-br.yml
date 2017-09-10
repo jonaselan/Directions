@@ -3,6 +3,10 @@ pt-br:
     language_text: 'Linguagem'
     signup: 'Criar conta'
     loginin: 'Logar'
+    link_path: 'Caminhos'
+    link_distances: 'Distâncias'
+    link_directions: 'Direções'
+    link_places: 'Locais'
   places:
     index:
       title: "Locais"

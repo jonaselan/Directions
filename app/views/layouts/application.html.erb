@@ -23,20 +23,25 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <!-- class="active" -->
-            <li><a href="/">Locais</a></li>
+            <li><a href="/"><%= t 'application.link_places' %></a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Direções
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= t 'application.link_directions' %>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/distancias">Distâncias</a></li>
-                <li><a href="/caminhos">Caminhos</a></li>
+                <li><a href="/distances"><%= t 'application.link_path' %></a></li>
+                <li><a href="/paths"><%= t 'application.link_distances' %></a></li>
                 <!-- <li><a href="/melhor_caminho">Melhor caminho</a></li> -->
               </ul>
             </li>
           </ul>
 
-          <%= link_to t('application.signup'), new_user_path %> or
-          <%= link_to t('application.loginin'), new_session_path %>
+          <% if current_user %>
+            Hello, <%= current_user.username %>!
+            <%= link_to "Log Out", logout_path, method: 'delete' %>
+          <% else %>
+            <%= link_to t('application.signup'), singup_path %> or
+            <%= link_to t('application.loginin'), login_path %>
+          <% end %>
 
           <p class="nav-language">
             <%= t 'application.language_text' %>:
@@ -47,6 +52,7 @@
       </div>
     </nav>
 
+    <!-- TODO: improvement display flash mensages with I18n -->
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, id: "flash_#{name}" %>
     <% end %>

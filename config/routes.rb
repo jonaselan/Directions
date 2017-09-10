@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     root 'places#index'
+
+    # TODO: I18n in params
+    get 'signup', to: 'users#new', as: 'singup'
+    get 'login', to: 'sessions#new', as: 'login'
+    delete 'logout', to: 'sessions#destroy', as: 'logout'
+
     resources :places
     resources :sessions
     resources :users
-    
-    get 'distancias' => 'directions#distance'
-    get 'caminhos' => 'directions#paths'
+
+    get 'distances' => 'directions#distance'
+    get 'paths' => 'directions#paths'
     # get 'melhor_caminho' => 'directions#best_path'
   end
 

@@ -3,6 +3,10 @@ en:
     language_text: 'Language'
     signup: 'Sign Up'
     loginin: 'Log In'
+    link_path: 'Paths'
+    link_distances: 'Distances'
+    link_directions: 'Directions'
+    link_places: 'Places'
   places:
     index:
       title: "Places"
