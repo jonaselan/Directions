@@ -1,8 +1,12 @@
 en:
   application:
     language_text: 'Language'
+    language_ptbr: 'Portuguese'
+    language_en: 'English'
+    hello: 'Hello'
     signup: 'Sign Up'
     loginin: 'Log In'
+    logout: 'Log Out'
     link_path: 'Paths'
     link_distances: 'Distances'
     link_directions: 'Directions'
@@ -11,3 +15,7 @@ en:
     index:
       title: "Places"
       new_place: "Create place"
+  formats:
+      default: "%m-%d-%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"

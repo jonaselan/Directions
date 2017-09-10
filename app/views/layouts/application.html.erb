@@ -13,16 +13,16 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand">Directions</a>
+          <a class="navbar-brand" href="#">Directions</a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <!-- class="active" -->
             <li><a href="/"><%= t 'application.link_places' %></a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= t 'application.link_directions' %>
@@ -34,20 +34,22 @@
               </ul>
             </li>
           </ul>
-
-          <% if current_user %>
-            Hello, <%= current_user.username %>!
-            <%= link_to "Log Out", logout_path, method: 'delete' %>
-          <% else %>
-            <%= link_to t('application.signup'), singup_path %> or
-            <%= link_to t('application.loginin'), login_path %>
-          <% end %>
-
-          <p class="nav-language">
-            <%= t 'application.language_text' %>:
-            <%= link_to_unless_current "Português", locale: 'pt-br' %> |
-            <%= link_to_unless_current "Inglês", locale: 'en' %>
-          </p>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <p class="nav-language">
+                <strong><%= t 'application.language_text' %>:</strong>
+                <%= link_to_unless_current t('application.language_ptbr'), locale: 'pt-br' %> |
+                <%= link_to_unless_current t('application.language_en'), locale: 'en' %>
+              </p>
+            </li>
+            <% if current_user %>
+              <li><a href="#"> <%= t('application.hello') %> <%= current_user.username %>!</a></li>
+              <li><%= link_to t('application.logout'), logout_path, method: 'delete' %></li>
+            <% else %>
+              <li><%= link_to t('application.signup'), singup_path %></li>
+              <li><%= link_to t('application.loginin'), login_path %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </nav>
