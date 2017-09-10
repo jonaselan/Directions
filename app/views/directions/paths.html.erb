@@ -1,12 +1,12 @@
 <div id="floating-panel">
-  <b>Start: </b>
+  <b><%= t '.start' %>: </b>
   <select id="start">
     <% @places.each do |place| %>
       <option value="<%=place[:latitude]%>,<%=place[:longitude] %>"> <%= place[:initials]%> </option>
     <% end %>
   </select>
 
-  <b>End: </b>
+  <b><%= t '.end' %></b>
   <select id="end">
     <% @places.each do |place| %>
       <option value="<%=place[:latitude]%>,<%=place[:longitude] %>"> <%= place[:initials]%> </option>

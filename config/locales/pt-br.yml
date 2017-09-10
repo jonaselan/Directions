@@ -7,7 +7,7 @@ pt-br:
     signup: 'Criar conta'
     loginin: 'Logar'
     logout: 'Sair'
-    link_path: 'Caminhos'
+    link_paths: 'Caminhos'
     link_distances: 'Distâncias'
     link_directions: 'Direções'
     link_places: 'Locais'
@@ -19,6 +19,12 @@ pt-br:
       attributes:
         place:
           name: "Nome"
+  directions:
+    distance:
+      help_text: 'Todos os caminhos são traçados atráves de estradas'
+    paths:
+      start: 'inicio'
+      end: 'destino'
   date:
     formats:
       default: "%d/%m/%Y"

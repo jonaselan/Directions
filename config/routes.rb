@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     root 'places#index'
 
-    # TODO: I18n in params
     get 'signup', to: 'users#new', as: 'singup'
     get 'login', to: 'sessions#new', as: 'login'
     delete 'logout', to: 'sessions#destroy', as: 'logout'

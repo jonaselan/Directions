@@ -23,13 +23,13 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/"><%= t 'application.link_places' %></a></li>
+            <li><%= link_to t('application.link_places'), root_path %></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= t 'application.link_directions' %>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/distances"><%= t 'application.link_path' %></a></li>
-                <li><a href="/paths"><%= t 'application.link_distances' %></a></li>
+                <li><%= link_to t('application.link_distances'), distances_path %> </li>
+                <li><%= link_to t('application.link_paths'), paths_path %></li>
                 <!-- <li><a href="/melhor_caminho">Melhor caminho</a></li> -->
               </ul>
             </li>
