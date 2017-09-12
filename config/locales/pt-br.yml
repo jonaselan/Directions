@@ -11,6 +11,7 @@ pt-br:
     link_distances: 'Distâncias'
     link_directions: 'Direções'
     link_places: 'Locais'
+    invalid_infos: 'Email or senha invalida(s)'
   places:
     index:
       title: "Locais"

@@ -11,6 +11,7 @@ en:
     link_distances: 'Distances'
     link_directions: 'Directions'
     link_places: 'Places'
+    invalid_infos: 'Email or password is invalid'
   places:
     index:
       title: "Places"

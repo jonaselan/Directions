@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
     # authenticate is a method from 'has_secure_password'
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: 'Logged in!'
+      redirect_to root_url; flash[:success] = 'Logged in!'
     else
-      flash.now.alert = 'Email or password is invalid'
+      flash[:danger] = I18n.t 'application.invalid_infos'
       render 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: 'log out'
+    redirect_to root_url; flash[:success] = I18n.t 'application.logout'
   end
 end
