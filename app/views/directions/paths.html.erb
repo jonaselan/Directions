@@ -18,4 +18,4 @@
   <p>Total Distance: <span id="total"></span></p>
 </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVz4E_4pKqtMrerILua81D7zGYS26Iod8&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.directions_google_api_key %>&callback=initMap"></script>

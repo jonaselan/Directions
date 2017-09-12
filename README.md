@@ -1,24 +1,17 @@
-# README
+# Directions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
 
-Things you may want to cover:
+- Rails 5.0.4
+- Ruby 2.3
 
-* Ruby version
+## Setup
 
-* System dependencies
+Before execute, it's necessary create a secrets.yml, for maintain the keys `directions_api_key` and `form_google_api_key`, inside of config folder. If you don't have a key yet, [click here](https://developers.google.com/maps/documentation/javascript/get-api-key):
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+development:
+  secret_key_base: [...]
+  directions_google_api_key: [...]
+  form_google_api_key: [...]
+```  
