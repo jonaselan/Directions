@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :sessions
     resources :users
 
-    get 'distances' => 'directions#distance'
+    get 'distances' => 'directions#distances'
     get 'paths' => 'directions#paths'
     # get 'melhor_caminho' => 'directions#best_path'
   end

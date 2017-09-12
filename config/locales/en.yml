@@ -16,7 +16,7 @@ en:
       title: "Places"
       new_place: "Create place"
   directions:
-    distance:
+    distances:
       help_text: 'All paths are made through roads'
     paths:
       start: 'start'

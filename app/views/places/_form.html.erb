@@ -99,9 +99,6 @@
     var fields =  split_by($("#address_text").val(), ',');
     var fields2 = split_by(fields[1], '-');
     var fields3 = split_by(fields[2], '-');
-    console.log(fields);
-    console.log(fields2);
-    console.log(fields3);
 
     $("[name='place[street]']").val(fields[0]);
     $("[name='place[number]']").val(fields2[0]);
@@ -157,8 +154,6 @@
             })
         },
         select: function (event, ui) {
-            // $("#latitude_text").val(ui.item.latitude);
-            // $("#longitude_text").val(ui.item.longitude);
             var location = new google.maps.LatLng(ui.item.latitude, ui.item.longitude);
             marker.setPosition(location);
             map.setCenter(location);

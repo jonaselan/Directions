@@ -1,7 +1,7 @@
-# DirectionsController: hold the logic of directions 
+# DirectionsController: hold the logic of directions
 class DirectionsController < ApplicationController
 
-  def distance
+  def distances
     gon.places = Place.all_lat_lng
     gon.initials = Place.all_initials
   end

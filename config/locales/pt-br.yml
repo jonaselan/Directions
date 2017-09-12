@@ -20,7 +20,7 @@ pt-br:
         place:
           name: "Nome"
   directions:
-    distance:
+    distances:
       help_text: 'Todos os caminhos são traçados atráves de estradas'
     paths:
       start: 'inicio'

@@ -1,4 +1,56 @@
-$(document).on('turbolinks:load', function() {
+var ready = function () {
   if (!(page.controller() === 'directions' && page.action() === 'paths')) { return; }
-  console.log('sim');
-});
+  initMap();
+}
+
+function initMap() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer({
+    draggable: true,
+    map: map,
+    panel: document.getElementById('right-panel')
+  });
+  var map = new google.maps.Map(document.getElementById('map-paths'), {
+    zoom: 7,
+    center: {lat: -5.748535, lng: -35.357119}
+  });
+
+  directionsDisplay.setMap(map);
+  directionsDisplay.addListener('directions_changed', function() {
+    computeTotalDistance(directionsDisplay.getDirections());
+  });
+
+  var onChangeHandler = function() {
+    displayRoute(document.getElementById('start').value, document.getElementById('end').value, directionsService, directionsDisplay);
+  };
+  document.getElementById('start').addEventListener('change', onChangeHandler);
+  document.getElementById('end').addEventListener('change', onChangeHandler);
+}
+
+function displayRoute(origin, destination, service, display) {
+  service.route({
+    origin: origin,
+    destination: destination,
+    travelMode: 'DRIVING',
+    avoidTolls: true
+  }, function(response, status) {
+    if (status === 'OK') {
+      display.setDirections(response);
+    } else {
+      alert('Could not display directions due to: ' + status);
+    }
+  });
+}
+
+function computeTotalDistance(result) {
+  var total = 0;
+  var myroute = result.routes[0];
+  for (var i = 0; i < myroute.legs.length; i++) {
+    total += myroute.legs[i].distance.value;
+  }
+  total = total / 1000;
+  document.getElementById('total').innerHTML = total + ' km';
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
