@@ -43,7 +43,7 @@
               </p>
             </li>
             <% if current_user %>
-              <li><a href="#"> <%= t('application.hello') %> <%= current_user.username %>!</a></li>
+              <li> <%= link_to  "#{t('application.hello')} #{current_user.username}!", edit_user_path(current_user) %></li>
               <li><%= link_to t('application.logout'), logout_path, method: 'delete' %></li>
             <% else %>
               <li><%= link_to t('application.signup'), singup_path %></li>

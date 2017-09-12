@@ -1,0 +1,22 @@
+<%= form_for user do |f| %>
+  <% if user.errors.any? %>
+    <%=  render '_commons/errors_form', errors: user.errors.full_messages  %>
+  <% end %>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </p>
+  <p class="button"><%= f.submit %></p>
+<% end %>
