@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <%= content_tag :body, data: { action: action_name, controller: controller_name } do %>
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -60,5 +60,5 @@
     <% end %>
 
     <%= yield %>
-  </body>
+  <% end %>
 </html>
