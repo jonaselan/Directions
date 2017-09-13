@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     redirect_to login_url, alert: 'Not authorized' if current_user.nil?
   end
 
+  def authorize_admin
+    redirect_to login_url, alert: 'Not authorized' if current_user.nil? || !current_user.admin?
+  end
+
   def set_locale
     I18n.locale = params[:locale] if params[:locale].present?
   end

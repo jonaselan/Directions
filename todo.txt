@@ -1,0 +1,6 @@
+- melhorar js
+x change info about the user
+x adding a environment variable
+x change password / welcome email (with preview and delayed job)
+x admin
+- deploy
