@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     root 'places#index'
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     resources :places
     resources :sessions
     resources :users
+    resources :password_resets
 
     get 'distances' => 'directions#distances'
     get 'paths' => 'directions#paths'
