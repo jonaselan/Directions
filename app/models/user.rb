@@ -2,6 +2,8 @@ class User < ApplicationRecord
   # informer this model has secure password (gem bcrypt-ruby)
   has_secure_password
 
+  has_many :attempt_login_faileds
+
   validates_uniqueness_of :email, :username
   before_create { generate_token(:auth_token) }
 

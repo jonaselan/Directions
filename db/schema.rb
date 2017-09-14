@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913205103) do
+ActiveRecord::Schema.define(version: 20170914193542) do
+
+  create_table "attempt_login_faileds", force: :cascade do |t|
+    t.string   "ip"
+    t.string   "user_email"
+    t.integer  "count",        default: 0
+    t.datetime "attempt_time"
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["user_id"], name: "index_attempt_login_faileds_on_user_id"
+  end
 
   create_table "places", force: :cascade do |t|
     t.string   "name"
