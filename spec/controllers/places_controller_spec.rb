@@ -54,7 +54,7 @@ RSpec.describe PlacesController, type: :controller do
     end
 
     context 'with invalid params' do
-      it 'returns a success response (i.e. to display the 'new' template)' do
+      it 'returns a success response (i.e. to display the \'new\' template)' do
         post :create, params: {place: invalid_attributes}
         expect(response).to be_success
       end
@@ -78,7 +78,7 @@ RSpec.describe PlacesController, type: :controller do
     end
 
     context 'with invalid params' do
-      it 'returns a success response (i.e. to display the 'edit' template)' do
+      it 'returns a success response (i.e. to display the \'edit\' template)' do
         put :update, params: {id: place.id, place: {name: nil}}
         expect(response).to be_success
       end
